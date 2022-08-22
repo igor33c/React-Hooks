@@ -10,12 +10,30 @@ function calcFat(num){
     return calcFat(n - 1) *n
 }
 
+function calcImparPar(num2){
+    
+    const n2 = parseInt(num2)
+    console.log(n2) 
+    if(n2 === 0) return "Zero"    
+    if(n2 % 2 ===0){
+        return "Par"
+    }
+    else return "Impar"
+}
 const UseEffect = (props) => {
     ///use effect = efeito colateral quando altera algo e alterado tb
     ///use efffect = efeitos colaterais nao visuais
 
     const [number, setNumber] = useState(1)
     const [fatorial, setFatorial] = useState(1)
+
+    const [number2, setNumber2] = useState(0)
+    const [imparPar, setImparPar] = useState("PAR")
+
+    useEffect(function(){
+        setImparPar(calcImparPar(number2))
+        console.log(number2)
+    }, [number2])
 
     useEffect(function(){
         setFatorial(calcFat(number))
@@ -42,9 +60,15 @@ const UseEffect = (props) => {
                 <input type="number" className="input" value={number} onChange={e => setNumber(e.target.value)} />
             </div>
             <SectionTitle title="Exercicio #2"/>
-            <div className="center">
-                
+            <div className="center">            
+                <div>
+                    <span className="text">Par Ou Impar: </span>
+                    <span className="text red">{imparPar}</span>
+                </div>
+                <input type="number" className="input" value={number2} onChange={e => setNumber2(e.target.value)} />
             </div>
+                
+            
         </div>
         
     )
