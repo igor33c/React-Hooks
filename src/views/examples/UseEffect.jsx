@@ -66,11 +66,8 @@ const UseEffect = (props) => {
                     <span className="text red">{imparPar}</span>
                 </div>
                 <input type="number" className="input" value={number2} onChange={e => setNumber2(e.target.value)} />
-            </div>
-                
-            
-        </div>
-        
+            </div>  
+        </div>        
     )
 }
 
