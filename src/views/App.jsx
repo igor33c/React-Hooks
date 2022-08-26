@@ -7,8 +7,7 @@ import Menu from '../components/layout/Menu'
 import Content from '../components/layout/Content'
 
 const App = props => {
-    const [state, setState] = useState(data)
-    
+    const [state, setState] = useState(data)   
 
     return (
                 <Store>

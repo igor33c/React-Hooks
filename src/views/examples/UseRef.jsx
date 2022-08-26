@@ -10,7 +10,6 @@ const merge = function (s1, s2){
 }
 
 const UseRef = (props) => {
-
   
     const [value1, setValue1] = useState("")
     const [value2, setValue2] = useState("")   

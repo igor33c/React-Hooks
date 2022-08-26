@@ -7,8 +7,7 @@ const UseCallback = (props) => {
     const inc = useCallback(function inc(delta){
         setCount(curr => curr + delta)      
     }, [setCount]
-        )
-
+    )
     
     return (
         <div className="UseCallback">

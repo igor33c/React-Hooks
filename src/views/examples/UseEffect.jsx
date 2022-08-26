@@ -20,6 +20,7 @@ function calcImparPar(num2){
     }
     else return "Impar"
 }
+
 const UseEffect = (props) => {
     ///use effect = efeito colateral quando altera algo e alterado tb
     ///use efffect = efeitos colaterais nao visuais

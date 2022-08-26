@@ -13,8 +13,7 @@ const UseContext = (props) => {
             ...state,
             number: state.number + delta
         })
-    }
-    
+    }    
 
     const {number, text, setNumber, setText} = useContext(AppContext)
     console.log(text)
