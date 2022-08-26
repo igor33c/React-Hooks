@@ -12,18 +12,30 @@ const initialState ={
 console.log(initialState)
 //*useReducer pegar estado atual e evoluir para cada ação que acontecer
 function reducer(state, action){
-    console.log(state)
+    console.log(state)    
     switch(action.type){
-        case 'number_add2':
-            return {...state, number: state.number + 2  }
         case 'login':
             {
                 console.log('ok')
                 return {...state, user: {name: action.name, age: 33}}
             }
-        
-        default: 
-            return state
+
+            case 'number_mult7':{
+                console.log(state.number)
+                return {...state, number: state.number * 7 }
+            }    
+            case 'number_add2':{
+                return {...state, number: state.number + 2  }
+            }          
+
+            case 'number_div25':
+                return {...state, number: state.number / 25}
+            
+            case 'number_parseInt':
+                return {...state, number: parseInt(state.number)}
+            
+            default: 
+                return state
     }
 }
 
@@ -53,6 +65,16 @@ const UseReducer = (props) => {
                     <button className="btn"
                         onClick={() => dispatch({type: 'number_add2'})}
                     >+2</button>
+                    <button className="btn" 
+                        onClick={() => dispatch({type: 'number_mult7' })}
+                    >*7</button>
+                    <button className="btn" 
+                        onClick={() => dispatch({type: 'number_div25' })}
+                    >/25</button>
+                    <button className="btn"
+                        onClick={() => dispatch({type: 'number_parseInt'})}
+                    > Tornar Inteiro</button>
+                    
                     
                 </div>
             </div>
